@@ -3,7 +3,7 @@
 //* REPRO                 
 //*------------------------------------------------------  
 //STEP1  EXEC PGM=IDCAMS                                   
-//IN  DD DSN=ITAUM.PS1,DISP=SHR                          
+//IN  DD DSN=ITAUM.PDS1(MEM1),DISP=SHR                          
 //OUT DD DSN=ITAUM.VSAM1,DISP=SHR                         
 //SYSPRINT DD  SYSOUT=*                                    
 //SYSIN DD  *                                              
