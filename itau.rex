@@ -2,7 +2,7 @@
 /* crea las librerias Master para ITAU Demo*/
 
 ENV = 'ITAUM'
-call uno
+-- call uno
 call dos
 exit
 
