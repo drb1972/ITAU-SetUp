@@ -2,7 +2,7 @@
 /* crea las librerias Master para ITAU Demo*/
 
 ENV = 'ITAUM'
--- call uno
+call uno
 call dos
 exit
 
@@ -28,7 +28,7 @@ com ="zowe zos-files create classic ITAUM.PDS1  --bs 6160 --dst LIBRARY --rf FB 
 com ="zowe zos-files create classic ITAUM.PDS2  --bs 6160 --dst LIBRARY --rf FB --rl 80 --sz 1 --ss 1"; interpret '"'com'"'
 
 /* VSAM */
-com ="zowe zos-files create vsam ITAUM.VSAM1  --dso INDEXED --sz 1 --ss 1"; interpret '"'com'"'
+com ="zowe zos-jobs submit local-file creavsam.jcl --vasc"; interpret '"'com'"'
 
 /* Populate libraries */
 
