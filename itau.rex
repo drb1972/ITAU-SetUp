@@ -21,7 +21,6 @@ do queued()
    select 
       when pos("ALIAS",var) > 0 then do
          say 'ALIAS 'env ' exists'
-         return
       end
       when pos("NOT FOUND",var) > 0 then do 
          jcl=jcl+1 ; jcl.jcl = '//CREALIAS JOB (40600000),CLASS=A,MSGCLASS=X'
@@ -34,7 +33,6 @@ do queued()
          jcl=jcl+ 1; jcl.jcl = '            CATALOG('masterc')'
 
          jcl.0 = jcl
-         say 'jcl.0' jcl.0
          "rm temp.jcl"
          output_file = 'temp.jcl' 
          call lineout output_file, , 1
@@ -43,12 +41,8 @@ do queued()
          end
          call lineout output_file
          com ="zowe zos-jobs submit local-file temp.jcl --vasc"; interpret '"'com'"'
-         return
       end
-      otherwise do 
-         say var
-         exit(8)
-      end
+      otherwise nop
    end
 end
 
